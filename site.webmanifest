@@ -1,0 +1,23 @@
+{
+  "name": "Prodesk IT — Enterprise Infrastructure & Managed IT Services",
+  "short_name": "Prodesk IT",
+  "description": "Cloud migration, managed security, DevOps, and 24/7 infrastructure engineering.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0f1e",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {
+      "src": "assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
