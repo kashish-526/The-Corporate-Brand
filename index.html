@@ -1,754 +1,855 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="">
-
 <head>
-  <!-- ============================================================
-       META — Phase 3: Lighthouse SEO + Best Practices
-  ============================================================= -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- Primary SEO -->
-  <title>Prodesk IT — Enterprise Infrastructure & Managed IT Services</title>
-  <meta name="description" content="Prodesk IT delivers cloud migration, managed security, DevOps pipelines, and 24/7 infrastructure engineering for enterprise teams. 99.9% uptime SLA guaranteed." />
-  <meta name="keywords" content="enterprise IT, cloud migration, managed services, DevOps, infrastructure, cybersecurity, digital transformation" />
-  <meta name="author" content="Prodesk IT" />
-  <meta name="robots" content="index, follow" />
+  <!-- SEO — Phase 3 Lighthouse -->
+  <title>Prodesk IT — Enterprise Infrastructure &amp; Managed IT Services</title>
+  <meta name="description" content="Prodesk IT engineers cloud-native infrastructure, managed security, and DevOps pipelines for enterprise teams. 99.9% uptime SLA. Sub-4-minute P1 response." />
+  <meta name="robots"   content="index, follow" />
   <link rel="canonical" href="https://www.prodeskIT.com/" />
 
-  <!-- Open Graph / Social (Phase 3: Best Practices) -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://www.prodeskIT.com/" />
-  <meta property="og:title"       content="Prodesk IT — Enterprise Infrastructure & Managed IT Services" />
-  <meta property="og:description" content="Cloud migration, managed security, DevOps pipelines, and 24/7 infrastructure engineering. 99.9% uptime SLA guaranteed." />
-  <meta property="og:image"       content="https://www.prodeskIT.com/assets/images/og-cover.webp" />
+  <!-- Open Graph -->
+  <meta property="og:type"         content="website" />
+  <meta property="og:url"          content="https://www.prodeskIT.com/" />
+  <meta property="og:title"        content="Prodesk IT — Enterprise Infrastructure &amp; Managed IT Services" />
+  <meta property="og:description"  content="Cloud migration, managed security, DevOps, and 24/7 infrastructure engineering. 99.9% uptime SLA guaranteed." />
+  <meta property="og:image"        content="https://www.prodeskIT.com/assets/images/og-cover.webp" />
   <meta property="og:image:width"  content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:site_name"   content="Prodesk IT" />
-  <meta property="og:locale"      content="en_US" />
 
-  <!-- Twitter Card -->
+  <!-- Twitter -->
   <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:site"        content="@ProdeskIT" />
-  <meta name="twitter:title"       content="Prodesk IT — Enterprise Infrastructure & Managed IT Services" />
+  <meta name="twitter:title"       content="Prodesk IT — Enterprise Infrastructure &amp; Managed IT Services" />
   <meta name="twitter:description" content="Cloud migration, managed security, DevOps, and 24/7 infrastructure engineering." />
   <meta name="twitter:image"       content="https://www.prodeskIT.com/assets/images/og-cover.webp" />
 
-  <!-- Theme color for mobile browsers -->
-  <meta name="theme-color" content="#0a0f1e" />
+  <meta name="theme-color"  content="#0b1120" />
   <meta name="color-scheme" content="dark light" />
+  <link rel="manifest"      href="site.webmanifest" />
+  <link rel="icon"          type="image/svg+xml" href="assets/images/favicon.svg" />
 
-  <!-- Favicon (Phase 3 Best Practices) -->
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
-  <link rel="icon" type="image/png"     href="assets/images/favicon.png" />
-  <link rel="apple-touch-icon"          href="assets/images/apple-touch-icon.png" />
-  <link rel="manifest"                  href="site.webmanifest" />
-
-  <!-- Google Fonts — Phase 2: typography system, display=swap for perf -->
+  <!-- Google Fonts — Phase 2 typography, display=swap (no render-block) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Dark mode init — runs before paint to prevent flash (Phase 3) -->
+  <!-- No-flash dark mode (Phase 3) -->
   <script>
-    (function () {
-      var saved = localStorage.getItem('prodesk-theme');
-      if (saved) {
-        document.documentElement.setAttribute('data-theme', saved);
-      } else {
-        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
-      }
+    (function(){
+      var s=localStorage.getItem('prodesk-theme');
+      var t=(s==='dark'||s==='light')?s:(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+      document.documentElement.setAttribute('data-theme',t);
     })();
   </script>
 
-  <!-- Structured Data / JSON-LD (Phase 3: Lighthouse SEO) -->
+  <!-- JSON-LD (Phase 3 Lighthouse SEO) -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Prodesk IT",
-    "url": "https://www.prodeskIT.com",
-    "logo": "https://www.prodeskIT.com/assets/images/logo.webp",
-    "description": "Enterprise infrastructure engineering, cloud migration, and managed IT services.",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+1-800-555-0199",
-      "contactType": "customer support",
-      "availableLanguage": "English"
-    },
-    "sameAs": [
-      "https://twitter.com/ProdeskIT",
-      "https://linkedin.com/company/prodesk-it"
-    ]
-  }
+  {"@context":"https://schema.org","@type":"Organization","name":"Prodesk IT","url":"https://www.prodeskIT.com","description":"Enterprise infrastructure engineering, cloud migration, and managed IT services.","contactPoint":{"@type":"ContactPoint","telephone":"+1-800-555-0199","contactType":"sales"}}
   </script>
 </head>
 
 <body>
 
-  <!-- Skip to main content (Phase 3: Accessibility / Lighthouse) -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <!-- Skip link — Lighthouse accessibility (Phase 3) -->
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <!-- ==========================================================
-       NAVBAR (Phase 1: logo left, links right, hamburger <768px)
-  =========================================================== -->
+  <!-- Overlay backdrop for mobile menu -->
+  <div id="menu-overlay" class="menu-overlay" aria-hidden="true"></div>
 
-  <!-- CSS-only hamburger toggle (Phase 1) -->
-  <input
-    type="checkbox"
-    id="nav-toggle"
-    class="navbar__toggle-checkbox"
-    aria-hidden="true"
-  />
-
+  <!-- ============================================================
+       NAVBAR
+       Phase 1: logo left | links right | hamburger on mobile
+       Phase 2: micro-interactions, dark-mode toggle
+       Phase 3: BEM, ARIA, localStorage theme
+  ============================================================= -->
   <header class="navbar" role="banner">
     <div class="navbar__inner">
 
-      <!-- Logo: left aligned (Phase 1) -->
-      <a href="/" class="navbar__logo" aria-label="Prodesk IT — Return to homepage">
-        <div class="navbar__logo-mark" aria-hidden="true">P</div>
+      <!-- Logo — always left (Phase 1) -->
+      <a class="navbar__logo" href="/" aria-label="Prodesk IT — home">
+        <span class="navbar__logo-mark" aria-hidden="true">P</span>
         <span class="navbar__logo-text">Prodesk<span>IT</span></span>
       </a>
 
-      <!-- Desktop navigation: right aligned (Phase 1) -->
+      <!-- Desktop nav — right side (Phase 1) -->
       <nav class="navbar__nav" role="navigation" aria-label="Primary navigation">
-        <a href="#services"     class="navbar__link">Services</a>
-        <a href="#how-it-works" class="navbar__link">How It Works</a>
-        <a href="#metrics"      class="navbar__link">Results</a>
-        <a href="#testimonials" class="navbar__link">Clients</a>
-        <a href="#contact"      class="navbar__link">Contact</a>
+        <a class="navbar__link" href="#services">Services</a>
+        <a class="navbar__link" href="#process">Process</a>
+        <a class="navbar__link" href="#results">Results</a>
+        <a class="navbar__link" href="#clients">Clients</a>
+        <a class="navbar__link" href="#contact">Contact</a>
       </nav>
 
-      <!-- Desktop actions -->
+      <!-- Desktop right actions -->
       <div class="navbar__actions">
-        <!-- Dark mode toggle (Phase 3) -->
-        <button
-          id="theme-toggle"
-          class="navbar__theme-toggle"
-          aria-label="Switch to light mode"
-          type="button"
-        >
-          <!-- Moon icon: shown in dark mode -->
-          <svg
-            class="navbar__theme-icon--dark"
-            xmlns="http://www.w3.org/2000/svg"
-            width="16" height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
-            focusable="false"
-          >
+        <!-- Dark/light toggle (Phase 3) -->
+        <button id="theme-btn" class="navbar__theme-btn" type="button"
+          aria-label="Switch to light mode" aria-pressed="false">
+          <svg class="navbar__theme-icon navbar__theme-icon--moon"
+            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true" focusable="false">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
           </svg>
-          <!-- Sun icon: shown in light mode -->
-          <svg
-            class="navbar__theme-icon--light"
-            xmlns="http://www.w3.org/2000/svg"
-            width="16" height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
-            focusable="false"
-          >
+          <svg class="navbar__theme-icon navbar__theme-icon--sun"
+            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true" focusable="false">
             <circle cx="12" cy="12" r="5"/>
-            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="1"  x2="12" y2="3"/>
             <line x1="12" y1="21" x2="12" y2="23"/>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="4.22" y1="4.22"   x2="5.64" y2="5.64"/>
             <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="1"  y1="12" x2="3"  y2="12"/>
             <line x1="21" y1="12" x2="23" y2="12"/>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            <line x1="4.22" y1="19.78"  x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64"  x2="19.78" y2="4.22"/>
           </svg>
         </button>
-
-        <a href="#contact" class="btn btn--ghost">Sign In</a>
-        <a href="#contact" class="btn btn--primary">
+        <!-- <a class="btn btn--ghost" href="#contact">Sign In</a> -->
+        <a class="btn btn--primary" href="#contact">
           Get a Demo
-          <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true" focusable="false">
+            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+          </svg>
         </a>
       </div>
 
-      <!-- Hamburger label (Phase 1: CSS-only toggle) -->
-      <label
-        for="nav-toggle"
-        class="navbar__hamburger"
+      <!-- Hamburger button (JS-driven, Phase 1 < 768px) -->
+      <button
+        id="hamburger-btn"
+        class="navbar__hamburger-btn"
+        type="button"
         aria-label="Open navigation menu"
-        role="button"
-        tabindex="0"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
       >
-        <span class="navbar__hamburger-line"></span>
-        <span class="navbar__hamburger-line"></span>
-        <span class="navbar__hamburger-line"></span>
-      </label>
+        <span class="navbar__bar"></span>
+        <span class="navbar__bar"></span>
+        <span class="navbar__bar"></span>
+      </button>
 
     </div>
-
-    <!-- Mobile menu (Phase 1: collapses on <768px) -->
-    <nav class="navbar__mobile-menu" aria-label="Mobile navigation">
-      <ul class="navbar__mobile-nav" role="list">
-        <li><a href="#services"     class="navbar__mobile-link">Services</a></li>
-        <li><a href="#how-it-works" class="navbar__mobile-link">How It Works</a></li>
-        <li><a href="#metrics"      class="navbar__mobile-link">Results</a></li>
-        <li><a href="#testimonials" class="navbar__mobile-link">Clients</a></li>
-        <li><a href="#contact"      class="navbar__mobile-link">Contact</a></li>
-      </ul>
-      <div class="navbar__mobile-actions">
-        <a href="#contact" class="btn btn--secondary" style="justify-content:center;">Sign In</a>
-        <a href="#contact" class="btn btn--primary"   style="justify-content:center;">Get a Demo</a>
-      </div>
-    </nav>
   </header>
 
-  <!-- ==========================================================
-       MAIN CONTENT
-  =========================================================== -->
-  <main id="main-content">
+  <!-- Mobile menu panel (JS-animated slide + fade) -->
+  <nav id="mobile-menu" class="navbar__mobile-panel"
+    aria-label="Mobile navigation" aria-hidden="true">
 
-    <!-- ========================================================
-         HERO (Phase 1: headline + subheadline + dual CTA + grid)
-         Phase 2: fade-in-up keyframe on headline
-    ========================================================= -->
-    <section class="hero" id="hero" aria-labelledby="hero-headline">
+    <ul class="navbar__mobile-list" role="list">
+      <li class="navbar__mobile-item">
+        <a class="navbar__mobile-link" href="#services">
+          Services
+          <svg class="navbar__mobile-link-icon" xmlns="http://www.w3.org/2000/svg"
+            width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+      </li>
+      <li class="navbar__mobile-item">
+        <a class="navbar__mobile-link" href="#process">
+          Process
+          <svg class="navbar__mobile-link-icon" xmlns="http://www.w3.org/2000/svg"
+            width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+      </li>
+      <li class="navbar__mobile-item">
+        <a class="navbar__mobile-link" href="#results">
+          Results
+          <svg class="navbar__mobile-link-icon" xmlns="http://www.w3.org/2000/svg"
+            width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+      </li>
+      <li class="navbar__mobile-item">
+        <a class="navbar__mobile-link" href="#clients">
+          Clients
+          <svg class="navbar__mobile-link-icon" xmlns="http://www.w3.org/2000/svg"
+            width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+      </li>
+      <li class="navbar__mobile-item">
+        <a class="navbar__mobile-link" href="#contact">
+          Contact
+          <svg class="navbar__mobile-link-icon" xmlns="http://www.w3.org/2000/svg"
+            width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+      </li>
+    </ul>
 
-      <!-- Animated network SVG background (Phase 3: CLS — explicit width/height) -->
-      <div class="hero__canvas" aria-hidden="true">
-        <svg
-          width="100%"
-          height="100%"
+    <div class="navbar__mobile-actions">
+      <!-- <a class="btn btn--outline" href="#contact" style="justify-content:center">Sign In</a> -->
+      <a class="btn btn--primary" href="#contact" style="justify-content:center">
+        Get a Demo
+        <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+          aria-hidden="true" focusable="false">
+          <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       MAIN
+  ============================================================= -->
+  <main id="main">
+
+    <!-- ==========================================================
+         HERO
+         Phase 1: headline + subheadline + dual CTA + grid layout
+         Phase 2: staggered line-by-line headline animation
+         Phase 3: explicit SVG dims = zero CLS
+    =========================================================== -->
+
+    <section class="hero" id="hero" aria-labelledby="hero-h1">
+
+      <!-- Network animation background -->
+      <div class="hero__bg" aria-hidden="true">
+        <svg class="hero__grid-svg"
+          width="1440" height="900"
           viewBox="0 0 1440 900"
           preserveAspectRatio="xMidYMid slice"
           xmlns="http://www.w3.org/2000/svg"
-          role="presentation"
-          focusable="false"
-        >
+          role="presentation" focusable="false">
           <defs>
-            <radialGradient id="rg-indigo" cx="50%" cy="50%" r="50%">
-              <stop offset="0%"   stop-color="#4f46e5" stop-opacity="0.9"/>
-              <stop offset="100%" stop-color="#4f46e5" stop-opacity="0"/>
+            <radialGradient id="rg-p" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"   stop-color="#6366f1" stop-opacity="0.85"/>
+              <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
             </radialGradient>
-            <radialGradient id="rg-cyan" cx="50%" cy="50%" r="50%">
-              <stop offset="0%"   stop-color="#06b6d4" stop-opacity="0.9"/>
-              <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+            <radialGradient id="rg-a" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"   stop-color="#22d3ee" stop-opacity="0.85"/>
+              <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
             </radialGradient>
-            <pattern id="grid-pattern" x="0" y="0" width="72" height="72" patternUnits="userSpaceOnUse">
-              <path d="M72 0L0 0 0 72" fill="none" stroke="rgba(79,70,229,0.06)" stroke-width="1"/>
+            <pattern id="dots" x="0" y="0" width="48" height="48" patternUnits="userSpaceOnUse">
+              <circle cx="1" cy="1" r="1" fill="rgba(99,102,241,0.20)"/>
+            </pattern>
+            <pattern id="grid" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+              <path d="M80 0L0 0 0 80" fill="none" stroke="rgba(99,102,241,0.05)" stroke-width="0.5"/>
             </pattern>
           </defs>
-
-          <!-- Grid -->
-          <rect width="100%" height="100%" fill="url(#grid-pattern)"/>
-
+          <rect width="100%" height="100%" fill="url(#grid)"/>
+          <rect width="100%" height="100%" fill="url(#dots)" opacity="0.55"/>
           <!-- Connection lines -->
-          <g stroke="rgba(79,70,229,0.14)" stroke-width="1" fill="none">
-            <line x1="190" y1="140" x2="490" y2="295">
-              <animate attributeName="stroke-opacity" values="0.14;0.28;0.14" dur="4s" repeatCount="indefinite"/>
+          <g fill="none" stroke-width="1">
+            <line x1="160" y1="120" x2="440" y2="260" stroke="rgba(99,102,241,0.2)">
+              <animate attributeName="stroke-opacity" values="0.2;0.38;0.2" dur="4s" repeatCount="indefinite"/>
             </line>
-            <line x1="490" y1="295" x2="890" y2="175">
-              <animate attributeName="stroke-opacity" values="0.14;0.22;0.14" dur="5s" repeatCount="indefinite"/>
+            <line x1="440" y1="260" x2="820" y2="150" stroke="rgba(99,102,241,0.15)">
+              <animate attributeName="stroke-opacity" values="0.15;0.3;0.15" dur="5.5s" repeatCount="indefinite"/>
             </line>
-            <line x1="890" y1="175" x2="1200" y2="395">
-              <animate attributeName="stroke-opacity" values="0.08;0.18;0.08" dur="3.5s" repeatCount="indefinite"/>
+            <line x1="820" y1="150" x2="1180" y2="350" stroke="rgba(99,102,241,0.12)">
+              <animate attributeName="stroke-opacity" values="0.12;0.24;0.12" dur="4s" repeatCount="indefinite"/>
             </line>
-            <line x1="490" y1="295" x2="700" y2="545">
-              <animate attributeName="stroke-opacity" values="0.10;0.22;0.10" dur="6s" repeatCount="indefinite"/>
+            <line x1="440" y1="260" x2="660" y2="520" stroke="rgba(34,211,238,0.15)">
+              <animate attributeName="stroke-opacity" values="0.15;0.30;0.15" dur="6s" repeatCount="indefinite"/>
             </line>
-            <line x1="700" y1="545" x2="1100" y2="595">
-              <animate attributeName="stroke-opacity" values="0.10;0.24;0.10" dur="4.5s" repeatCount="indefinite"/>
+            <line x1="660" y1="520" x2="1060" y2="560" stroke="rgba(34,211,238,0.12)">
+              <animate attributeName="stroke-opacity" values="0.12;0.26;0.12" dur="4.5s" repeatCount="indefinite"/>
             </line>
-            <line x1="100" y1="600" x2="490" y2="295">
-              <animate attributeName="stroke-opacity" values="0.06;0.14;0.06" dur="7s" repeatCount="indefinite"/>
+            <line x1="90"  y1="560" x2="440" y2="260" stroke="rgba(99,102,241,0.08)">
+              <animate attributeName="stroke-opacity" values="0.08;0.18;0.08" dur="7s" repeatCount="indefinite"/>
             </line>
           </g>
-
-          <!-- Nodes — indigo -->
+          <!-- Nodes -->
           <g>
-            <circle cx="190" cy="140" r="3" fill="#4f46e5" opacity="0.65">
-              <animate attributeName="opacity" values="0.65;1;0.65" dur="3s" repeatCount="indefinite"/>
+            <circle cx="160" cy="120" r="3.5" fill="#6366f1" opacity="0.7">
+              <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
             </circle>
-            <circle cx="190" cy="140" r="14" fill="url(#rg-indigo)" opacity="0.45">
-              <animate attributeName="r" values="14;20;14" dur="3s" repeatCount="indefinite"/>
+            <circle cx="160" cy="120" r="18" fill="url(#rg-p)" opacity="0.4">
+              <animate attributeName="r" values="18;28;18" dur="3s" repeatCount="indefinite"/>
             </circle>
-
-            <circle cx="490" cy="295" r="4.5" fill="#4f46e5" opacity="0.85">
-              <animate attributeName="opacity" values="0.85;1;0.85" dur="2.5s" repeatCount="indefinite"/>
+            <circle cx="440" cy="260" r="5" fill="#6366f1" opacity="0.9">
+              <animate attributeName="opacity" values="0.9;1;0.9" dur="2s" repeatCount="indefinite"/>
             </circle>
-            <circle cx="490" cy="295" r="18" fill="url(#rg-indigo)" opacity="0.4">
-              <animate attributeName="r" values="18;28;18" dur="2.5s" repeatCount="indefinite"/>
+            <circle cx="440" cy="260" r="22" fill="url(#rg-p)" opacity="0.45">
+              <animate attributeName="r" values="22;35;22" dur="2s" repeatCount="indefinite"/>
             </circle>
-
-            <circle cx="890" cy="175" r="3" fill="#4f46e5" opacity="0.5">
-              <animate attributeName="opacity" values="0.5;0.9;0.5" dur="4s" repeatCount="indefinite"/>
+            <circle cx="820" cy="150" r="3.5" fill="#6366f1" opacity="0.6">
+              <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite"/>
             </circle>
-            <circle cx="890" cy="175" r="13" fill="url(#rg-indigo)" opacity="0.3">
-              <animate attributeName="r" values="13;22;13" dur="4s" repeatCount="indefinite"/>
+            <circle cx="820" cy="150" r="16" fill="url(#rg-p)" opacity="0.3">
+              <animate attributeName="r" values="16;26;16" dur="4s" repeatCount="indefinite"/>
             </circle>
-
-            <circle cx="1200" cy="395" r="3" fill="#4f46e5" opacity="0.4">
-              <animate attributeName="opacity" values="0.4;0.75;0.4" dur="5s" repeatCount="indefinite"/>
+            <circle cx="1180" cy="350" r="3" fill="#6366f1" opacity="0.5">
+              <animate attributeName="opacity" values="0.5;0.85;0.5" dur="5s" repeatCount="indefinite"/>
             </circle>
-          </g>
-
-          <!-- Nodes — cyan -->
-          <g>
-            <circle cx="700" cy="545" r="4.5" fill="#06b6d4" opacity="0.75">
-              <animate attributeName="opacity" values="0.75;1;0.75" dur="3.5s" repeatCount="indefinite"/>
+            <circle cx="660" cy="520" r="4.5" fill="#22d3ee" opacity="0.8">
+              <animate attributeName="opacity" values="0.8;1;0.8" dur="3.5s" repeatCount="indefinite"/>
             </circle>
-            <circle cx="700" cy="545" r="18" fill="url(#rg-cyan)" opacity="0.38">
-              <animate attributeName="r" values="18;28;18" dur="3.5s" repeatCount="indefinite"/>
+            <circle cx="660" cy="520" r="20" fill="url(#rg-a)" opacity="0.4">
+              <animate attributeName="r" values="20;33;20" dur="3.5s" repeatCount="indefinite"/>
             </circle>
-
-            <circle cx="1100" cy="595" r="3" fill="#06b6d4" opacity="0.5">
-              <animate attributeName="opacity" values="0.5;0.85;0.5" dur="4.5s" repeatCount="indefinite"/>
+            <circle cx="1060" cy="560" r="3" fill="#22d3ee" opacity="0.5">
+              <animate attributeName="opacity" values="0.5;0.82;0.5" dur="4.5s" repeatCount="indefinite"/>
             </circle>
-            <circle cx="1100" cy="595" r="13" fill="url(#rg-cyan)" opacity="0.28">
-              <animate attributeName="r" values="13;22;13" dur="4.5s" repeatCount="indefinite"/>
-            </circle>
-
-            <circle cx="100" cy="600" r="2.5" fill="#06b6d4" opacity="0.4">
+            <circle cx="90" cy="560" r="2.5" fill="#22d3ee" opacity="0.4">
               <animate attributeName="opacity" values="0.4;0.7;0.4" dur="6s" repeatCount="indefinite"/>
             </circle>
           </g>
-
-          <!-- Data packet travelling across network -->
-          <circle r="3.5" fill="#06b6d4" opacity="0.9">
-            <animateMotion dur="7s" repeatCount="indefinite" calcMode="linear">
-              <mpath href="#packet-path"/>
+          <!-- Data packets -->
+          <circle r="3" fill="#22d3ee" opacity="0">
+            <animateMotion dur="7s" repeatCount="indefinite">
+              <mpath href="#pkt1"/>
             </animateMotion>
             <animate attributeName="opacity" values="0;0.9;0.9;0.9;0" dur="7s" repeatCount="indefinite"/>
           </circle>
-          <path id="packet-path" d="M190,140 L490,295 L700,545 L1100,595" fill="none"/>
-
-          <!-- Second packet, offset timing -->
-          <circle r="2.5" fill="#4f46e5" opacity="0.7">
-            <animateMotion dur="9s" begin="3s" repeatCount="indefinite" calcMode="linear">
-              <mpath href="#packet-path-2"/>
+          <path id="pkt1" d="M160,120 L440,260 L660,520 L1060,560" fill="none"/>
+          <circle r="2.5" fill="#6366f1" opacity="0">
+            <animateMotion dur="9s" begin="2.5s" repeatCount="indefinite">
+              <mpath href="#pkt2"/>
             </animateMotion>
-            <animate attributeName="opacity" values="0;0.7;0.7;0.7;0" dur="9s" begin="3s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.75;0.75;0.75;0" dur="9s" begin="2.5s" repeatCount="indefinite"/>
           </circle>
-          <path id="packet-path-2" d="M100,600 L490,295 L890,175 L1200,395" fill="none"/>
+          <path id="pkt2" d="M90,560 L440,260 L820,150 L1180,350" fill="none"/>
         </svg>
+        <div class="hero__radial"></div>
       </div>
 
-      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__layout">
 
-      <!-- Hero content grid (Phase 1) -->
-      <div class="hero__content">
-
-        <!-- Left: text -->
+        <!-- Text column -->
         <div class="hero__text">
-          <div class="hero__badge" role="status" aria-live="polite">
-            <span class="hero__badge-dot" aria-hidden="true"></span>
-            Trusted by 200+ enterprises globally
+          <div class="hero__eyebrow" role="status">
+            <span class="hero__eyebrow-dot" aria-hidden="true"></span>
+            Infrastructure that earns its SLA
           </div>
 
-          <!-- Headline with keyframe animation (Phase 2) -->
-          <h1 class="hero__headline" id="hero-headline">
-            Infrastructure<br>
-            that
-            <span class="hero__headline--accent">never</span><br>
-            sleeps.
+          <!-- Headline: line-by-line stagger animation (Phase 2) -->
+          <h1 class="hero__headline" id="hero-h1">
+            <span class="hero__headline-line">Enterprise</span>
+            <span class="hero__headline-line">IT that</span>
+            <span class="hero__headline-line text-gradient">never fails.</span>
           </h1>
 
           <p class="hero__subheadline">
-            Prodesk IT delivers cloud-native infrastructure, managed security, and
-            DevOps engineering that keeps your business at full velocity —
-            24/7, at any scale, anywhere in the world.
+            Prodesk IT engineers the cloud infrastructure, security posture,
+            and DevOps pipelines that keep enterprise operations running at
+            full velocity — 24 hours a day, across every region.
           </p>
 
-          <!-- Dual CTA buttons (Phase 1) -->
+          <!-- Dual CTA — Phase 1 requirement -->
           <div class="hero__actions">
-            <a href="#contact" class="btn btn--primary btn--lg">
-              <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            <a class="btn btn--primary btn--lg" href="#contact">
+              <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true" focusable="false">
+                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+              </svg>
               Request a Demo
             </a>
-            <a href="#services" class="btn btn--secondary btn--lg">
+            <a class="btn btn--outline btn--lg" href="#services">
               Explore Services
             </a>
           </div>
+
+          <!-- Social proof -->
+          <div class="hero__trust" aria-label="Client social proof">
+            <!-- <div class="hero__trust-avatars" aria-hidden="true">
+              <div class="hero__trust-avatar">RS</div>
+              <div class="hero__trust-avatar">LM</div>
+              <div class="hero__trust-avatar">AK</div>
+              <div class="hero__trust-avatar">JT</div>
+              <div class="hero__trust-avatar" style="background:var(--clr-primary-subtle);color:var(--clr-primary);font-size:var(--fs-2xs)">+196</div>
+            </div> -->
+            <!-- <div class="hero__trust-text">
+              <strong>200+ enterprise clients</strong>
+              across 18 countries trust Prodesk IT
+            </div> -->
+          </div>
         </div>
 
-        <!-- Right: stat cards (Phase 1 modern grid layout) -->
-        <div class="hero__visual" aria-label="Key performance metrics">
-          <article class="stat-card">
-            <div class="stat-card__label">Uptime SLA</div>
-            <div class="stat-card__value">
-              <span class="stat-card__value--accent" data-count="99.9">99.9</span>%
+        <!-- Live dashboard panel -->
+        <div class="hero__panel">
+          <div class="dashboard" role="img"
+            aria-label="Live infrastructure health monitor — all systems operational">
+            <div class="dashboard__bar">
+              <div class="dashboard__dots" aria-hidden="true">
+                <span class="dashboard__dot dashboard__dot--red"></span>
+                <span class="dashboard__dot dashboard__dot--amber"></span>
+                <span class="dashboard__dot dashboard__dot--green"></span>
+              </div>
+              <span class="dashboard__title">prodesk — infrastructure monitor</span>
+              <span class="dashboard__status-dot" title="Live" aria-label="Live"></span>
             </div>
-            <p class="stat-card__description">Guaranteed availability</p>
-            <div class="stat-card__bar">
-              <div class="stat-card__bar-fill" style="width:99.9%" aria-hidden="true"></div>
+            <div class="dashboard__body">
+              <div class="dashboard__header">
+                <span class="dashboard__header-title">Infrastructure Health</span>
+                <span class="dashboard__live-badge">
+                  <span class="dashboard__live-dot" aria-hidden="true"></span>LIVE
+                </span>
+              </div>
+              <div class="dashboard__metrics" aria-label="Key metrics">
+                <div class="dashboard__metric">
+                  <div class="dashboard__metric-label">Uptime</div>
+                  <div class="dashboard__metric-value dashboard__metric-value--good">99.97%</div>
+                  <div class="dashboard__metric-delta">↑ 0.02% this wk</div>
+                </div>
+                <div class="dashboard__metric">
+                  <div class="dashboard__metric-label">Response</div>
+                  <div class="dashboard__metric-value dashboard__metric-value--accent">3.2ms</div>
+                  <div class="dashboard__metric-delta" style="color:var(--clr-success)">↓ 0.4ms</div>
+                </div>
+                <div class="dashboard__metric">
+                  <div class="dashboard__metric-label">Nodes</div>
+                  <div class="dashboard__metric-value">47<span style="font-size:var(--fs-sm);color:var(--clr-text-subtle)">/48</span></div>
+                  <div class="dashboard__metric-delta">1 maintenance</div>
+                </div>
+              </div>
+              <div aria-hidden="true">
+                <div style="font-family:var(--font-mono);font-size:var(--fs-2xs);color:var(--clr-text-subtle);margin-bottom:var(--sp-2);text-transform:uppercase;letter-spacing:.06em;">
+                  Request throughput · last 14 intervals
+                </div>
+                <div class="dashboard__sparkline">
+                  <div class="dashboard__spark-bar" style="height:55%"></div>
+                  <div class="dashboard__spark-bar" style="height:70%"></div>
+                  <div class="dashboard__spark-bar" style="height:48%"></div>
+                  <div class="dashboard__spark-bar" style="height:82%"></div>
+                  <div class="dashboard__spark-bar" style="height:65%"></div>
+                  <div class="dashboard__spark-bar" style="height:90%"></div>
+                  <div class="dashboard__spark-bar" style="height:75%"></div>
+                  <div class="dashboard__spark-bar dashboard__spark-bar--peak" style="height:100%"></div>
+                  <div class="dashboard__spark-bar" style="height:88%"></div>
+                  <div class="dashboard__spark-bar" style="height:72%"></div>
+                  <div class="dashboard__spark-bar" style="height:85%"></div>
+                  <div class="dashboard__spark-bar" style="height:60%"></div>
+                  <div class="dashboard__spark-bar" style="height:78%"></div>
+                  <div class="dashboard__spark-bar" style="height:91%"></div>
+                </div>
+              </div>
+              <div class="dashboard__feed" role="feed" aria-label="Service status">
+                <div class="dashboard__feed-header">
+                  <span class="dashboard__feed-title">Service Status</span>
+                  <span style="font-size:var(--fs-2xs);color:var(--clr-success);font-family:var(--font-mono);font-weight:600;">● All Clear</span>
+                </div>
+                <div class="dashboard__feed-row">
+                  <span class="dashboard__feed-indicator dashboard__feed-indicator--ok" aria-label="Operational"></span>
+                  <span class="dashboard__feed-service">api-gateway-prod</span>
+                  <span class="dashboard__feed-time" aria-label="2 seconds ago">2s ago</span>
+                  <span class="dashboard__feed-status dashboard__feed-status--ok">Operational</span>
+                </div>
+                <div class="dashboard__feed-row">
+                  <span class="dashboard__feed-indicator dashboard__feed-indicator--ok" aria-label="Operational"></span>
+                  <span class="dashboard__feed-service">eks-cluster-us-east-1</span>
+                  <span class="dashboard__feed-time" aria-label="8 seconds ago">8s ago</span>
+                  <span class="dashboard__feed-status dashboard__feed-status--ok">Operational</span>
+                </div>
+                <div class="dashboard__feed-row">
+                  <span class="dashboard__feed-indicator dashboard__feed-indicator--warn" aria-label="Maintenance"></span>
+                  <span class="dashboard__feed-service">db-replica-eu-west-1</span>
+                  <span class="dashboard__feed-time" aria-label="4 minutes ago">4m ago</span>
+                  <span class="dashboard__feed-status dashboard__feed-status--warn">Maintenance</span>
+                </div>
+                <div class="dashboard__feed-row">
+                  <span class="dashboard__feed-indicator dashboard__feed-indicator--ok" aria-label="Operational"></span>
+                  <span class="dashboard__feed-service">cdn-edge-network</span>
+                  <span class="dashboard__feed-time" aria-label="12 seconds ago">12s ago</span>
+                  <span class="dashboard__feed-status dashboard__feed-status--ok">Operational</span>
+                </div>
+                <div class="dashboard__feed-row">
+                  <span class="dashboard__feed-indicator dashboard__feed-indicator--ok" aria-label="Operational"></span>
+                  <span class="dashboard__feed-service">waf-security-layer</span>
+                  <span class="dashboard__feed-time" aria-label="1 second ago">1s ago</span>
+                  <span class="dashboard__feed-status dashboard__feed-status--ok">Operational</span>
+                </div>
+              </div>
             </div>
-          </article>
-
-          <article class="stat-card">
-            <div class="stat-card__label">Clients Served</div>
-            <div class="stat-card__value">
-              <span class="stat-card__value--accent" data-count="200">200</span>+
-            </div>
-            <p class="stat-card__description">Across 18 countries</p>
-          </article>
-
-          <article class="stat-card stat-card--wide">
-            <div class="stat-card__label">Avg. Incident Response</div>
-            <div class="stat-card__value">
-              &lt;&nbsp;<span class="stat-card__value--accent" data-count="4">4</span>&nbsp;min
-            </div>
-            <p class="stat-card__description">
-              P1 incidents resolved 10× faster than the industry average of 45 minutes
-            </p>
-            <div class="stat-card__bar">
-              <div class="stat-card__bar-fill" style="width:92%" aria-hidden="true"></div>
-            </div>
-          </article>
+          </div>
         </div>
 
       </div>
     </section>
 
-    <!-- ========================================================
+    <!-- ==========================================================
          CLIENTS MARQUEE
-    ========================================================= -->
-    <section aria-label="Trusted by leading companies">
-      <div class="clients">
-        <p class="clients__label">Trusted by industry leaders worldwide</p>
-        <!-- Duplicate items for seamless CSS loop (Phase 2) -->
-        <div class="clients__track" aria-hidden="true">
-          <span class="clients__item"><span class="clients__item-dot" aria-hidden="true"></span>Axiom Corp</span>
-          <span class="clients__item"><span class="clients__item-dot" aria-hidden="true"></span>NovaTech Group</span>
-          <span class="clients__item"><span class="clients__item-dot" aria-hidden="true"></span>Meridian Finance</span>
-          <span class="clients__item"><span class="clients__item-dot" aria-hidden="true"></span>Orbis Logistics</span>
-          <span class="clients__item"><span class="clients__item-dot" aria-hidden="true"></span>Vantara Health</span>
-          <span class="clients__item"><span class="clients__item-dot" aria-hidden="true"></span>Cirrus Systems</span>
-          <span class="clients__item"><span class="clients__item-dot" aria-hidden="true"></span>Nexwave Retail</span>
-          <span class="clients__item"><span class="clients__item-dot" aria-hidden="true"></span>Pinnacle Bank</span>
-          <span class="clients__item"><span class="clients__item-dot" aria-hidden="true"></span>Vector Labs</span>
-          <!-- Duplicate for infinite scroll -->
-          <span class="clients__item"><span class="clients__item-dot" aria-hidden="true"></span>Axiom Corp</span>
-          <span class="clients__item"><span class="clients__item-dot" aria-hidden="true"></span>NovaTech Group</span>
-          <span class="clients__item"><span class="clients__item-dot" aria-hidden="true"></span>Meridian Finance</span>
-          <span class="clients__item"><span class="clients__item-dot" aria-hidden="true"></span>Orbis Logistics</span>
-          <span class="clients__item"><span class="clients__item-dot" aria-hidden="true"></span>Vantara Health</span>
-          <span class="clients__item"><span class="clients__item-dot" aria-hidden="true"></span>Cirrus Systems</span>
-          <span class="clients__item"><span class="clients__item-dot" aria-hidden="true"></span>Nexwave Retail</span>
-          <span class="clients__item"><span class="clients__item-dot" aria-hidden="true"></span>Pinnacle Bank</span>
-          <span class="clients__item"><span class="clients__item-dot" aria-hidden="true"></span>Vector Labs</span>
+    =========================================================== -->
+    <section aria-label="Trusted by leading enterprises">
+      <div class="clients-strip">
+        <p class="clients-strip__label">Trusted by industry leaders worldwide</p>
+        <div class="clients-strip__track" aria-hidden="true">
+          <span class="clients-strip__item"><span class="clients-strip__sep"></span>Axiom Corp</span>
+          <span class="clients-strip__item"><span class="clients-strip__sep"></span>NovaTech Group</span>
+          <span class="clients-strip__item"><span class="clients-strip__sep"></span>Meridian Finance</span>
+          <span class="clients-strip__item"><span class="clients-strip__sep"></span>Orbis Logistics</span>
+          <span class="clients-strip__item"><span class="clients-strip__sep"></span>Vantara Health</span>
+          <span class="clients-strip__item"><span class="clients-strip__sep"></span>Cirrus Systems</span>
+          <span class="clients-strip__item"><span class="clients-strip__sep"></span>Nexwave Retail</span>
+          <span class="clients-strip__item"><span class="clients-strip__sep"></span>Pinnacle Bank</span>
+          <span class="clients-strip__item"><span class="clients-strip__sep"></span>Vector Labs</span>
+          <!-- duplicate for seamless loop -->
+          <span class="clients-strip__item"><span class="clients-strip__sep"></span>Axiom Corp</span>
+          <span class="clients-strip__item"><span class="clients-strip__sep"></span>NovaTech Group</span>
+          <span class="clients-strip__item"><span class="clients-strip__sep"></span>Meridian Finance</span>
+          <span class="clients-strip__item"><span class="clients-strip__sep"></span>Orbis Logistics</span>
+          <span class="clients-strip__item"><span class="clients-strip__sep"></span>Vantara Health</span>
+          <span class="clients-strip__item"><span class="clients-strip__sep"></span>Cirrus Systems</span>
+          <span class="clients-strip__item"><span class="clients-strip__sep"></span>Nexwave Retail</span>
+          <span class="clients-strip__item"><span class="clients-strip__sep"></span>Pinnacle Bank</span>
+          <span class="clients-strip__item"><span class="clients-strip__sep"></span>Vector Labs</span>
         </div>
       </div>
     </section>
 
-    <!-- ========================================================
-         SERVICES / FEATURES — Phase 1: 3-col grid → 1-col mobile
-         CSS Grid auto-fit/auto-fill (Phase 1 requirement)
-    ========================================================= -->
-    <section class="services" id="services" aria-labelledby="services-heading">
-      <div class="container">
+    <!-- ==========================================================
+         SERVICES — Phase 1: 3-col auto-fit grid → 1-col mobile
+    =========================================================== -->
 
-        <header class="section-header section-header--center">
-          <span class="section-header__eyebrow">What We Build</span>
-          <h2 class="section-header__title" id="services-heading">
+<section class="services" id="services" aria-labelledby="svc-title">
+  <div class="u-container">
+    <header class="section-hd section-hd--center reveal">
+      <div class="section-hd__eyebrow">What We Build</div>
+      <h2 class="section-hd__title" id="svc-title">
+        End-to-end IT services<br>for serious teams
+      </h2>
+      <p class="section-hd__sub">
+        From bare-metal to serverless, we engineer the digital backbone
+        your organisation needs to operate at scale — and stay there.
+      </p>
+    </header>
+
+    <div class="services__grid" role="list">
+      
+      <article class="svc-card reveal" role="listitem">
+        <div class="svc-card__img-box">
+          <img src="assets/images/cloud-service.png" alt="Cloud Migration" loading="lazy" width="100%" height="160">
+        </div>
+        <h3 class="svc-card__title">Cloud Migration</h3>
+        <p class="svc-card__desc">Zero-downtime migration to AWS, Azure, or GCP — full cost modelling, network redesign, and 90-day hypercare as standard.</p>
+        <div class="svc-card__tech" aria-label="Technologies">
+          <span class="svc-card__pill">AWS</span><span class="svc-card__pill">Azure</span>
+          <span class="svc-card__pill">GCP</span><span class="svc-card__pill">Terraform</span>
+        </div>
+      </article>
+
+      <article class="svc-card reveal" role="listitem">
+        <div class="svc-card__img-box">
+          <img src="assets/images/security-service.png" alt="Managed Security" loading="lazy" width="100%" height="160">
+        </div>
+        <h3 class="svc-card__title">Managed Security</h3>
+        <p class="svc-card__desc">24/7 SOC-as-a-service with zero-trust network architecture and compliance — ISO 27001, SOC 2 Type II, and GDPR.</p>
+        <div class="svc-card__tech" aria-label="Compliance">
+          <span class="svc-card__pill">SOC 2</span><span class="svc-card__pill">ISO 27001</span>
+          <span class="svc-card__pill">GDPR</span><span class="svc-card__pill">SIEM</span>
+        </div>
+      </article>
+
+      <article class="svc-card reveal" role="listitem">
+        <div class="svc-card__img-box">
+          <img src="assets/images/devops-service.png" alt="DevOps & CI/CD" loading="lazy" width="100%" height="160">
+        </div>
+        <h3 class="svc-card__title">DevOps &amp; CI/CD</h3>
+        <p class="svc-card__desc">Kubernetes orchestration, GitOps pipelines, and platform engineering — ship confidently 40× a day.</p>
+        <div class="svc-card__tech" aria-label="Technologies">
+          <span class="svc-card__pill">Kubernetes</span><span class="svc-card__pill">Helm</span>
+          <span class="svc-card__pill">ArgoCD</span><span class="svc-card__pill">GitHub Actions</span>
+        </div>
+      </article>
+
+      <article class="svc-card reveal" role="listitem">
+        <div class="svc-card__img-box">
+          <img src="assets/images/network-service.png" alt="Network Infrastructure" loading="lazy" width="100%" height="160">
+        </div>
+        <h3 class="svc-card__title">Network Infrastructure</h3>
+        <p class="svc-card__desc">SD-WAN design, data centre interconnects, and global load balancing — sub-10ms latency across all regions.</p>
+        <div class="svc-card__tech" aria-label="Technologies">
+          <span class="svc-card__pill">SD-WAN</span><span class="svc-card__pill">BGP</span>
+          <span class="svc-card__pill">MPLS</span><span class="svc-card__pill">Anycast</span>
+        </div>
+      </article>
+
+      <article class="svc-card reveal" role="listitem">
+        <div class="svc-card__img-box">
+          <img src="assets/images/observability-service.png" alt="Observability Stack" loading="lazy" width="100%" height="160">
+        </div>
+        <h3 class="svc-card__title">Observability Stack</h3>
+        <p class="svc-card__desc">Full-stack monitoring with real-time dashboards, distributed tracing, and intelligent alerting end-to-end.</p>
+        <div class="svc-card__tech" aria-label="Technologies">
+          <span class="svc-card__pill">Prometheus</span><span class="svc-card__pill">Grafana</span>
+          <span class="svc-card__pill">Datadog</span><span class="svc-card__pill">OpenTelemetry</span>
+        </div>
+      </article>
+
+      <article class="svc-card reveal" role="listitem">
+        <div class="svc-card__img-box">
+          <img src="assets/images/dr-service.png" alt="Disaster Recovery" loading="lazy" width="100%" height="160">
+        </div>
+        <h3 class="svc-card__title">Disaster Recovery</h3>
+        <p class="svc-card__desc">Geo-redundant backups with RPO &lt;15 min and automated failover tested live against your SLA targets.</p>
+        <div class="svc-card__tech" aria-label="SLA">
+          <span class="svc-card__pill">RPO &lt;15min</span><span class="svc-card__pill">RTO &lt;30min</span>
+          <span class="svc-card__pill">Velero</span><span class="svc-card__pill">S3 Cross-region</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+    <!-- <section class="services" id="services" aria-labelledby="svc-title">
+      <div class="u-container">
+        <header class="section-hd section-hd--center reveal">
+          <div class="section-hd__eyebrow">What We Build</div>
+          <h2 class="section-hd__title" id="svc-title">
             End-to-end IT services<br>for serious teams
           </h2>
-          <p class="section-header__sub">
-            From bare-metal to serverless, we engineer the digital backbone your
-            organization needs to operate at full speed — and stay there.
+          <p class="section-hd__sub">
+            From bare-metal to serverless, we engineer the digital backbone
+            your organisation needs to operate at scale — and stay there.
           </p>
         </header>
 
-        <!-- Phase 1: 3-col grid collapsing via auto-fit -->
         <div class="services__grid" role="list">
-
-          <article class="feature-card" role="listitem">
-            <div class="feature-card__icon" aria-hidden="true">☁️</div>
-            <h3 class="feature-card__title">Cloud Migration</h3>
-            <p class="feature-card__description">
-              Zero-downtime migration to AWS, Azure, or GCP. Full cost modeling,
-              post-migration optimization, and 90-day hypercare included as standard.
-            </p>
-            <div class="feature-card__tag" aria-label="Tech stack: AWS, Azure, GCP">
-              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              AWS · Azure · GCP
+          <article class="svc-card reveal" role="listitem">
+            <div class="svc-card__icon-wrap" aria-hidden="true"><span class="svc-card__icon">☁️</span></div>
+            <h3 class="svc-card__title">Cloud Migration</h3>
+            <p class="svc-card__desc">Zero-downtime migration to AWS, Azure, or GCP — full cost modelling, network redesign, and 90-day hypercare as standard.</p>
+            <div class="svc-card__tech" aria-label="Technologies">
+              <span class="svc-card__pill">AWS</span><span class="svc-card__pill">Azure</span>
+              <span class="svc-card__pill">GCP</span><span class="svc-card__pill">Terraform</span>
             </div>
           </article>
 
-          <article class="feature-card" role="listitem">
-            <div class="feature-card__icon" aria-hidden="true">🛡️</div>
-            <h3 class="feature-card__title">Managed Security</h3>
-            <p class="feature-card__description">
-              SOC-as-a-service with 24/7 threat detection, zero-trust network
-              architecture, and compliance frameworks — ISO 27001, SOC 2, GDPR.
-            </p>
-            <div class="feature-card__tag" aria-label="Compliance: SOC 2, ISO 27001">
-              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              SOC 2 · ISO 27001 · GDPR
+          <article class="svc-card reveal" role="listitem">
+            <div class="svc-card__icon-wrap" aria-hidden="true"><span class="svc-card__icon">🛡️</span></div>
+            <h3 class="svc-card__title">Managed Security</h3>
+            <p class="svc-card__desc">24/7 SOC-as-a-service with zero-trust network architecture and compliance — ISO 27001, SOC 2 Type II, and GDPR.</p>
+            <div class="svc-card__tech" aria-label="Compliance">
+              <span class="svc-card__pill">SOC 2</span><span class="svc-card__pill">ISO 27001</span>
+              <span class="svc-card__pill">GDPR</span><span class="svc-card__pill">SIEM</span>
             </div>
           </article>
 
-          <article class="feature-card" role="listitem">
-            <div class="feature-card__icon" aria-hidden="true">⚙️</div>
-            <h3 class="feature-card__title">DevOps & CI/CD</h3>
-            <p class="feature-card__description">
-              Kubernetes orchestration, GitOps pipelines, and platform engineering
-              that give your dev teams the velocity to ship 40× a day, confidently.
-            </p>
-            <div class="feature-card__tag" aria-label="Tech: Kubernetes, Terraform, GitHub Actions">
-              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              K8s · Terraform · GitHub Actions
+          <article class="svc-card reveal" role="listitem">
+            <div class="svc-card__icon-wrap" aria-hidden="true"><span class="svc-card__icon">⚙️</span></div>
+            <h3 class="svc-card__title">DevOps &amp; CI/CD</h3>
+            <p class="svc-card__desc">Kubernetes orchestration, GitOps pipelines, and platform engineering — ship confidently 40× a day.</p>
+            <div class="svc-card__tech" aria-label="Technologies">
+              <span class="svc-card__pill">Kubernetes</span><span class="svc-card__pill">Helm</span>
+              <span class="svc-card__pill">ArgoCD</span><span class="svc-card__pill">GitHub Actions</span>
             </div>
           </article>
 
-          <article class="feature-card" role="listitem">
-            <div class="feature-card__icon" aria-hidden="true">🔌</div>
-            <h3 class="feature-card__title">Network Infrastructure</h3>
-            <p class="feature-card__description">
-              SD-WAN design, data center interconnects, and global load balancing
-              for multi-region operations that demand sub-10ms latency.
-            </p>
-            <div class="feature-card__tag" aria-label="Tech: SD-WAN, BGP, MPLS">
-              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              SD-WAN · BGP · MPLS
+          <article class="svc-card reveal" role="listitem">
+            <div class="svc-card__icon-wrap" aria-hidden="true"><span class="svc-card__icon">🔌</span></div>
+            <h3 class="svc-card__title">Network Infrastructure</h3>
+            <p class="svc-card__desc">SD-WAN design, data centre interconnects, and global load balancing — sub-10ms latency across all regions.</p>
+            <div class="svc-card__tech" aria-label="Technologies">
+              <span class="svc-card__pill">SD-WAN</span><span class="svc-card__pill">BGP</span>
+              <span class="svc-card__pill">MPLS</span><span class="svc-card__pill">Anycast</span>
             </div>
           </article>
 
-          <article class="feature-card" role="listitem">
-            <div class="feature-card__icon" aria-hidden="true">📊</div>
-            <h3 class="feature-card__title">Observability Stack</h3>
-            <p class="feature-card__description">
-              Full-stack monitoring with real-time dashboards, distributed tracing,
-              and intelligent alerting — from infrastructure logs to user sessions.
-            </p>
-            <div class="feature-card__tag" aria-label="Tech: Prometheus, Grafana, Datadog">
-              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              Prometheus · Grafana · Datadog
+          <article class="svc-card reveal" role="listitem">
+            <div class="svc-card__icon-wrap" aria-hidden="true"><span class="svc-card__icon">📊</span></div>
+            <h3 class="svc-card__title">Observability Stack</h3>
+            <p class="svc-card__desc">Full-stack monitoring with real-time dashboards, distributed tracing, and intelligent alerting end-to-end.</p>
+            <div class="svc-card__tech" aria-label="Technologies">
+              <span class="svc-card__pill">Prometheus</span><span class="svc-card__pill">Grafana</span>
+              <span class="svc-card__pill">Datadog</span><span class="svc-card__pill">OpenTelemetry</span>
             </div>
           </article>
 
-          <article class="feature-card" role="listitem">
-            <div class="feature-card__icon" aria-hidden="true">💾</div>
-            <h3 class="feature-card__title">Disaster Recovery</h3>
-            <p class="feature-card__description">
-              Geo-redundant backups with RPO under 15 minutes and fully automated
-              failover — tested against your SLA targets, not just documented.
-            </p>
-            <div class="feature-card__tag" aria-label="SLA: RPO under 15 minutes, RTO under 30 minutes">
-              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              RPO &lt;15 min · RTO &lt;30 min
+          <article class="svc-card reveal" role="listitem">
+            <div class="svc-card__icon-wrap" aria-hidden="true"><span class="svc-card__icon">💾</span></div>
+            <h3 class="svc-card__title">Disaster Recovery</h3>
+            <p class="svc-card__desc">Geo-redundant backups with RPO &lt;15 min and automated failover tested live against your SLA targets.</p>
+            <div class="svc-card__tech" aria-label="SLA">
+              <span class="svc-card__pill">RPO &lt;15min</span><span class="svc-card__pill">RTO &lt;30min</span>
+              <span class="svc-card__pill">Velero</span><span class="svc-card__pill">S3 Cross-region</span>
             </div>
           </article>
-
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <!-- ========================================================
-         HOW IT WORKS
-    ========================================================= -->
-    <section class="how-it-works" id="how-it-works" aria-labelledby="how-heading">
-      <div class="container">
-        <div class="how-it-works__inner">
-
-          <!-- Steps column -->
+    <!-- ==========================================================
+         PROCESS
+    =========================================================== -->
+    <section class="process" id="process" aria-labelledby="proc-title">
+      <div class="u-container">
+        <div class="process__layout">
           <div>
-            <header class="section-header">
-              <span class="section-header__eyebrow">Our Process</span>
-              <h2 class="section-header__title" id="how-heading">
-                From discovery to<br>production in weeks
+            <header class="section-hd reveal">
+              <div class="section-hd__eyebrow">Our Process</div>
+              <h2 class="section-hd__title" id="proc-title">
+                From discovery<br>to production<br>in weeks
               </h2>
-              <p class="section-header__sub">
-                A structured engagement model that eliminates guesswork and
-                gets your infrastructure live — fast.
+              <p class="section-hd__sub">
+                A structured engagement that eliminates guesswork and ships
+                your infrastructure live — fast.
               </p>
             </header>
 
-            <ol class="how-it-works__steps" aria-label="Engagement process steps">
-              <li class="step">
-                <div class="step__number" aria-hidden="true">01</div>
-                <div class="step__body">
-                  <h3 class="step__title">Infrastructure Audit</h3>
-                  <p class="step__description">
-                    We map your current environment — on-prem, cloud, hybrid — and
-                    identify performance bottlenecks, security gaps, and cost waste.
-                  </p>
+            <ol class="process__steps" aria-label="Engagement process">
+              <li class="p-step reveal">
+                <div class="p-step__num" aria-hidden="true">01</div>
+                <div class="p-step__body">
+                  <div class="p-step__label">Week 1</div>
+                  <h3 class="p-step__title">Infrastructure Audit</h3>
+                  <p class="p-step__desc">We map your full environment and surface bottlenecks, security gaps, and cost waste — with dollar figures attached.</p>
                 </div>
               </li>
-              <li class="step">
-                <div class="step__number" aria-hidden="true">02</div>
-                <div class="step__body">
-                  <h3 class="step__title">Architecture Blueprint</h3>
-                  <p class="step__description">
-                    Our engineers deliver a detailed modernization roadmap with cost
-                    projections, risk assessment, and timeline estimates.
-                  </p>
+              <li class="p-step reveal">
+                <div class="p-step__num" aria-hidden="true">02</div>
+                <div class="p-step__body">
+                  <div class="p-step__label">Week 2–3</div>
+                  <h3 class="p-step__title">Architecture Blueprint</h3>
+                  <p class="p-step__desc">Detailed modernisation roadmap with cost projections, risk matrix, and timeline estimates reviewed live with your team.</p>
                 </div>
               </li>
-              <li class="step">
-                <div class="step__number" aria-hidden="true">03</div>
-                <div class="step__body">
-                  <h3 class="step__title">Deploy & Automate</h3>
-                  <p class="step__description">
-                    We build, test, and deploy using infrastructure-as-code with
-                    automated rollback and canary release strategies as standard.
-                  </p>
+              <li class="p-step reveal">
+                <div class="p-step__num" aria-hidden="true">03</div>
+                <div class="p-step__body">
+                  <div class="p-step__label">Week 3–8</div>
+                  <h3 class="p-step__title">Deploy &amp; Automate</h3>
+                  <p class="p-step__desc">Build and deploy with IaC, automated rollback, canary releases, and load testing as standard. Zero unplanned downtime.</p>
                 </div>
               </li>
-              <li class="step">
-                <div class="step__number" aria-hidden="true">04</div>
-                <div class="step__body">
-                  <h3 class="step__title">Operate & Optimise</h3>
-                  <p class="step__description">
-                    Post-launch: continuous monitoring, 24/7 incident response, and
-                    quarterly cost optimisation reviews. Your ops team stays lean.
-                  </p>
+              <li class="p-step reveal">
+                <div class="p-step__num" aria-hidden="true">04</div>
+                <div class="p-step__body">
+                  <div class="p-step__label">Ongoing</div>
+                  <h3 class="p-step__title">Operate &amp; Optimise</h3>
+                  <p class="p-step__desc">24/7 monitoring, sub-4-min P1 response, and quarterly cost reviews. Your team ships — we keep the lights on.</p>
                 </div>
               </li>
             </ol>
           </div>
 
-          <!-- Terminal visual (Phase 3: explicit dimensions for CLS) -->
-          <div
-            class="terminal"
+          <!-- Terminal -->
+          <div class="terminal reveal reveal--d2"
             role="img"
-            aria-label="Prodesk IT deployment pipeline showing a successful infrastructure audit and deployment"
-          >
-            <div class="terminal__bar">
-              <span class="terminal__dot terminal__dot--red"   aria-hidden="true"></span>
-              <span class="terminal__dot terminal__dot--amber" aria-hidden="true"></span>
-              <span class="terminal__dot terminal__dot--green" aria-hidden="true"></span>
-              <span class="terminal__title">prodesk-deploy — bash — 80×24</span>
+            aria-label="Terminal showing a Prodesk deployment completing successfully">
+            <div class="terminal__topbar">
+              <span class="terminal__dot terminal__dot--r" aria-hidden="true"></span>
+              <span class="terminal__dot terminal__dot--a" aria-hidden="true"></span>
+              <span class="terminal__dot terminal__dot--g" aria-hidden="true"></span>
+              <span class="terminal__label">prodesk-deploy — zsh — 88×30</span>
             </div>
             <div class="terminal__body" aria-hidden="true">
-              <div>
-                <span class="terminal__prompt">prodesk</span><span class="terminal__dim"> ~/prod </span><span class="terminal__command">$ prodesk audit --env production</span>
-              </div>
-              <div class="terminal__comment">  # Scanning infrastructure topology...</div>
-              <div><span class="terminal__success">✔</span> Discovered 47 compute nodes</div>
-              <div><span class="terminal__success">✔</span> Mapped 12 network segments</div>
-              <div><span class="terminal__warning">⚠</span> 3 security misconfigurations found</div>
-              <div><span class="terminal__success">✔</span> Cost savings identified: $4,200/mo</div>
-              <br/>
-              <div>
-                <span class="terminal__prompt">prodesk</span><span class="terminal__dim"> ~/prod </span><span class="terminal__command">$ prodesk deploy --plan blueprint.tf</span>
-              </div>
-              <div class="terminal__comment">  # Applying Terraform plan...</div>
-              <div><span class="terminal__success">✔</span> VPC provisioned (us-east-1, eu-west-1)</div>
-              <div><span class="terminal__success">✔</span> EKS cluster scaled → 12 nodes</div>
-              <div><span class="terminal__success">✔</span> Load balancer + WAF configured</div>
-              <div><span class="terminal__success">✔</span> CI/CD pipeline deployed &amp; tested</div>
-              <div><span class="terminal__success">✔</span> Monitoring stack active</div>
-              <br/>
-              <div>
-                <span class="terminal__prompt">prodesk</span><span class="terminal__dim"> ~/prod </span><span class="terminal__command">$ prodesk monitor --live</span>
-              </div>
-              <div>
-                <span class="terminal__success">●</span> Status: <span class="terminal__success">All systems operational</span> — uptime 99.97%
-              </div>
-              <div>
-                <span class="terminal__prompt">prodesk</span><span class="terminal__dim"> ~/prod </span><span class="terminal__command">$ <span class="terminal__cursor"></span></span>
-              </div>
+              <div><span class="t-prompt">❯</span> <span class="t-cmd">prodesk audit --env=production</span></div>
+              <div class="t-comment">  # Scanning 47 nodes across 3 regions...</div>
+              <div><span class="t-ok">✔</span> compute: 47 nodes mapped (us-east-1, eu-west-1, ap-se-2)</div>
+              <div><span class="t-ok">✔</span> network: 12 segments, 0 routing anomalies</div>
+              <div><span class="t-warn">⚠</span> security: 3 misconfigurations (severity: medium)</div>
+              <div><span class="t-ok">✔</span> cost delta: <span class="t-hl">-$4,200/mo</span> savings identified</div>
+              <div>&nbsp;</div>
+              <div><span class="t-prompt">❯</span> <span class="t-cmd">prodesk deploy --plan blueprint.tf</span></div>
+              <div class="t-comment">  # Applying in 3 waves: canary → staging → prod</div>
+              <div><span class="t-ok">✔</span> VPC + subnets provisioned (us-east-1)</div>
+              <div><span class="t-ok">✔</span> EKS cluster: 12 nodes, autoscale 4–20</div>
+              <div><span class="t-ok">✔</span> WAF + ALB configured, health checks passing</div>
+              <div><span class="t-ok">✔</span> CI/CD: GitHub Actions → ArgoCD live</div>
+              <div><span class="t-ok">✔</span> Prometheus + Grafana dashboards deployed</div>
+              <div><span class="t-ok">✔</span> PagerDuty alerts configured</div>
+              <div>&nbsp;</div>
+              <div><span class="t-prompt">❯</span> <span class="t-cmd">prodesk monitor --live</span></div>
+              <div><span class="t-ok">●</span> Status: <span class="t-ok">All systems operational</span></div>
+              <div><span class="t-dim">  Uptime: 99.97% │ P99: 3.2ms │ Errors: 0.001%</span></div>
+              <div>&nbsp;</div>
+              <div><span class="t-prompt">❯</span> <span class="t-cursor"></span></div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- ========================================================
-         METRICS
-    ========================================================= -->
-    <section class="metrics" id="metrics" aria-labelledby="metrics-heading">
-      <div class="container">
-
-        <header class="section-header section-header--center">
-          <span class="section-header__eyebrow">By the Numbers</span>
-          <h2 class="section-header__title" id="metrics-heading">
-            Results that speak for themselves
-          </h2>
+    <!-- ==========================================================
+         METRICS — counter animation (Phase 2)
+    =========================================================== -->
+    <section class="metrics" id="results" aria-labelledby="res-title">
+      <div class="u-container">
+        <header class="section-hd section-hd--center reveal">
+          <div class="section-hd__eyebrow">By the Numbers</div>
+          <h2 class="section-hd__title" id="res-title">Results that speak<br>for themselves</h2>
+          <p class="section-hd__sub">Measured outcomes across 200+ enterprise deployments since 2018.</p>
         </header>
-
         <div class="metrics__grid" role="list">
-          <article class="metric-card" role="listitem">
-            <div class="metric-card__value" aria-label="99.9 percent uptime SLA">
-              <span data-count="99.9">99.9</span>%
+          <article class="metric-card reveal" role="listitem">
+            <div class="metric-card__number" aria-label="99.9 percent uptime SLA">
+              <span data-count="99.9">0</span>%
             </div>
-            <p class="metric-card__label">Uptime SLA</p>
+            <p class="metric-card__label">Uptime SLA<br>Guaranteed</p>
           </article>
-          <article class="metric-card" role="listitem">
-            <div class="metric-card__value" aria-label="200 plus enterprise clients">
-              <span data-count="200">200</span>+
+          <article class="metric-card reveal" role="listitem">
+            <div class="metric-card__number" aria-label="200 plus enterprise clients">
+              <span data-count="200">0</span>+
             </div>
-            <p class="metric-card__label">Enterprise Clients</p>
+            <p class="metric-card__label">Enterprise<br>Clients</p>
           </article>
-          <article class="metric-card" role="listitem">
-            <div class="metric-card__value" aria-label="38 percent average cost reduction">
-              <span data-count="38">38</span>%
+          <article class="metric-card reveal" role="listitem">
+            <div class="metric-card__number" aria-label="38 percent cost reduction">
+              <span data-count="38">0</span>%
             </div>
-            <p class="metric-card__label">Avg. Cost Reduction</p>
+            <p class="metric-card__label">Avg. Cost<br>Reduction</p>
           </article>
-          <article class="metric-card" role="listitem">
-            <div class="metric-card__value" aria-label="4 minute incident response time">
-              &lt;<span data-count="4">4</span>m
+          <article class="metric-card reveal" role="listitem">
+            <div class="metric-card__number" aria-label="less than 4 minute response">
+              &lt;<span data-count="4">0</span>m
             </div>
-            <p class="metric-card__label">Incident Response</p>
+            <p class="metric-card__label">P1 Incident<br>Response</p>
           </article>
-          <article class="metric-card" role="listitem">
-            <div class="metric-card__value" aria-label="18 countries served">
-              <span data-count="18">18</span>
+          <article class="metric-card reveal" role="listitem">
+            <div class="metric-card__number" aria-label="18 countries">
+              <span data-count="18">0</span>
             </div>
-            <p class="metric-card__label">Countries Served</p>
+            <p class="metric-card__label">Countries<br>Served</p>
           </article>
         </div>
-
       </div>
     </section>
 
-    <!-- ========================================================
-         TESTIMONIALS (Phase 1: 3-col grid → 1-col mobile)
-    ========================================================= -->
-    <section class="testimonials" id="testimonials" aria-labelledby="testi-heading">
-      <div class="container">
-
-        <header class="section-header section-header--center">
-          <span class="section-header__eyebrow">Client Stories</span>
-          <h2 class="section-header__title" id="testi-heading">
-            What our clients say
-          </h2>
-          <p class="section-header__sub">
-            Real outcomes from real enterprises who trusted us with their most
-            critical infrastructure.
-          </p>
+    <!-- ==========================================================
+         TESTIMONIALS — Phase 1: 3-col → 1-col
+    =========================================================== -->
+    <section class="testimonials" id="clients" aria-labelledby="testi-title">
+      <div class="u-container">
+        <header class="section-hd section-hd--center reveal">
+          <div class="section-hd__eyebrow">Client Stories</div>
+          <h2 class="section-hd__title" id="testi-title">What our clients say</h2>
+          <p class="section-hd__sub">Real outcomes from enterprise engineering teams who trusted us with their most critical infrastructure.</p>
         </header>
-
-        <!-- Phase 1: 3-col grid using auto-fit -->
         <div class="testimonials__grid" role="list">
 
-          <article class="testi-card" role="listitem">
-            <div class="testi-card__stars" aria-label="5 out of 5 stars">
+          <article class="testi-card reveal" role="listitem">
+            <div class="testi-card__rating" aria-label="5 out of 5 stars">
               <span class="testi-card__star" aria-hidden="true">★</span>
               <span class="testi-card__star" aria-hidden="true">★</span>
               <span class="testi-card__star" aria-hidden="true">★</span>
               <span class="testi-card__star" aria-hidden="true">★</span>
               <span class="testi-card__star" aria-hidden="true">★</span>
             </div>
-            <blockquote class="testi-card__quote">
-              "Prodesk migrated our entire on-prem stack to AWS in six weeks with zero unplanned
-              downtime. Infrastructure costs dropped 38% in the first quarter post-migration."
-            </blockquote>
+            <blockquote class="testi-card__quote">Prodesk migrated our entire on-prem stack to AWS in six weeks with zero unplanned downtime. Infrastructure costs dropped 38% in Q1 — exactly what they projected.</blockquote>
             <footer class="testi-card__author">
               <div class="testi-card__avatar" aria-hidden="true">RS</div>
               <div>
@@ -758,18 +859,15 @@
             </footer>
           </article>
 
-          <article class="testi-card" role="listitem">
-            <div class="testi-card__stars" aria-label="5 out of 5 stars">
+          <article class="testi-card reveal" role="listitem">
+            <div class="testi-card__rating" aria-label="5 out of 5 stars">
               <span class="testi-card__star" aria-hidden="true">★</span>
               <span class="testi-card__star" aria-hidden="true">★</span>
               <span class="testi-card__star" aria-hidden="true">★</span>
               <span class="testi-card__star" aria-hidden="true">★</span>
               <span class="testi-card__star" aria-hidden="true">★</span>
             </div>
-            <blockquote class="testi-card__quote">
-              "Their security team identified and patched a critical vulnerability our internal
-              team had missed for eight months. SOC 2 Type II was certified three weeks ahead of schedule."
-            </blockquote>
+            <blockquote class="testi-card__quote">Their security team found a critical vulnerability our internal team had missed for eight months. SOC 2 Type II cert came three weeks ahead of schedule.</blockquote>
             <footer class="testi-card__author">
               <div class="testi-card__avatar" aria-hidden="true">LM</div>
               <div>
@@ -779,18 +877,15 @@
             </footer>
           </article>
 
-          <article class="testi-card" role="listitem">
-            <div class="testi-card__stars" aria-label="5 out of 5 stars">
+          <article class="testi-card reveal" role="listitem">
+            <div class="testi-card__rating" aria-label="5 out of 5 stars">
               <span class="testi-card__star" aria-hidden="true">★</span>
               <span class="testi-card__star" aria-hidden="true">★</span>
               <span class="testi-card__star" aria-hidden="true">★</span>
               <span class="testi-card__star" aria-hidden="true">★</span>
               <span class="testi-card__star" aria-hidden="true">★</span>
             </div>
-            <blockquote class="testi-card__quote">
-              "We went from weekly releases to deploying 40+ times a day. The DevOps pipeline
-              Prodesk built is now the backbone of everything we ship to production."
-            </blockquote>
+            <blockquote class="testi-card__quote">We went from weekly releases to shipping 40+ times a day. The DevOps pipeline Prodesk built is the backbone of everything we take to production now.</blockquote>
             <footer class="testi-card__author">
               <div class="testi-card__avatar" aria-hidden="true">AK</div>
               <div>
@@ -804,33 +899,55 @@
       </div>
     </section>
 
-    <!-- ========================================================
-         CTA SECTION
-    ========================================================= -->
-    <section class="cta-section" id="contact" aria-labelledby="cta-heading">
-      <div class="container">
-        <div class="cta-section__card">
-          <div class="cta-section__glow" aria-hidden="true"></div>
+    <!-- ==========================================================
+         CTA
+    =========================================================== -->
+    <section class="cta-section" id="contact" aria-labelledby="cta-title">
+      <div class="u-container">
+        <div class="cta-section__card reveal">
+          <div class="cta-section__blob cta-section__blob--a" aria-hidden="true"></div>
+          <div class="cta-section__blob cta-section__blob--b" aria-hidden="true"></div>
           <div class="cta-section__content">
-            <span class="section-header__eyebrow">Ready to start?</span>
-            <h2 class="cta-section__title" id="cta-heading">
+            <div class="section-hd__eyebrow" style="justify-content:center;display:flex;margin-bottom:var(--sp-4)">Ready to start?</div>
+            <h2 class="cta-section__title" id="cta-title">
               Your infrastructure,<br>
-              <span class="cta-section__title--gradient">re-engineered.</span>
+              <span class="text-gradient">re-engineered.</span>
             </h2>
-            <p class="cta-section__subtitle">
-              Book a 30-minute architecture review. No slides, no pitch decks —
-              just your engineers talking to ours.
+            <p class="cta-section__sub">
+              Book a 30-minute architecture review. No slides, no vendor pitch —
+              just your engineers talking to ours, about your actual stack.
             </p>
             <div class="cta-section__actions">
-              <a href="mailto:hello@prodeskIT.com" class="btn btn--primary btn--lg">
-                <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <a class="btn btn--primary btn--lg" href="mailto:hello@prodeskIT.com">
+                <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true" focusable="false">
+                  <rect width="20" height="16" x="2" y="4" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
                 Book Architecture Review
               </a>
-              <a href="tel:+18005550199" class="btn btn--secondary btn--lg">
-                <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.97a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a class="btn btn--outline btn--lg" href="tel:+18005550199">
+                <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true" focusable="false">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.97a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
                 Call +1 800 555 0199
               </a>
             </div>
+            <p class="cta-section__note">
+              <svg class="cta-section__note-icon" xmlns="http://www.w3.org/2000/svg"
+                width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+              No commitment · Free 30-min session · Response within 4 hours
+            </p>
           </div>
         </div>
       </div>
@@ -838,84 +955,92 @@
 
   </main>
 
-  <!-- ==========================================================
-       FOOTER (Phase 1: semantic <footer>)
-  =========================================================== -->
+  <!-- ============================================================
+       FOOTER — Phase 1: semantic <footer>
+  ============================================================= -->
   <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__grid">
+    <div class="u-container">
+      <div class="footer__main">
 
-        <!-- Brand column -->
         <div class="footer__brand">
-          <a href="/" class="navbar__logo" aria-label="Prodesk IT">
-            <div class="navbar__logo-mark" aria-hidden="true">P</div>
+          <a class="navbar__logo" href="/" aria-label="Prodesk IT">
+            <span class="navbar__logo-mark" aria-hidden="true">P</span>
             <span class="navbar__logo-text">Prodesk<span>IT</span></span>
           </a>
-          <p class="footer__brand-description">
-            Enterprise-grade infrastructure engineering and managed IT services.
-            We build what your business runs on.
+          <p class="footer__brand-desc">
+            Enterprise-grade infrastructure engineering and managed IT
+            services. We build what your business runs on.
           </p>
+          <div class="footer__socials" aria-label="Social media links">
+            <!-- <a class="footer__social-btn" href="#" aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+              </svg>
+            </a> -->
+            <a class="footer__social-btn" href="https://www.linkedin.com/company/prodesktech/?originalSubdomain=in" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+            <a class="footer__social-btn" href="https://www.instagram.com/prodeskit/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+    </svg>
+  </a>
+          </div>
         </div>
 
-        <!-- Services column -->
-        <nav aria-label="Services navigation">
+        <nav aria-label="Services footer links">
           <p class="footer__col-title">Services</p>
           <ul class="footer__links" role="list">
-            <li><a href="#services" class="footer__link">Cloud Migration</a></li>
-            <li><a href="#services" class="footer__link">Managed Security</a></li>
-            <li><a href="#services" class="footer__link">DevOps & CI/CD</a></li>
-            <li><a href="#services" class="footer__link">Network Infrastructure</a></li>
-            <li><a href="#services" class="footer__link">Disaster Recovery</a></li>
+            <li><a class="footer__link" href="#services">Cloud Migration</a></li>
+            <li><a class="footer__link" href="#services">Managed Security</a></li>
+            <li><a class="footer__link" href="#services">DevOps &amp; CI/CD</a></li>
+            <li><a class="footer__link" href="#services">Network Infrastructure</a></li>
+            <li><a class="footer__link" href="#services">Disaster Recovery</a></li>
           </ul>
         </nav>
 
-        <!-- Company column -->
-        <nav aria-label="Company navigation">
+        <nav aria-label="Company footer links">
           <p class="footer__col-title">Company</p>
           <ul class="footer__links" role="list">
-            <li><a href="#how-it-works" class="footer__link">How It Works</a></li>
-            <li><a href="#testimonials" class="footer__link">Client Stories</a></li>
-            <li><a href="#contact"      class="footer__link">About Us</a></li>
-            <li><a href="#contact"      class="footer__link">Careers</a></li>
-            <li><a href="#contact"      class="footer__link">Press</a></li>
+            <li><a class="footer__link" href="#process">How It Works</a></li>
+            <li><a class="footer__link" href="#clients">Client Stories</a></li>
+            <li><a class="footer__link" href="#contact">About Us</a></li>
+            <li><a class="footer__link" href="#contact">Careers</a></li>
+            <li><a class="footer__link" href="#contact">Press &amp; Media</a></li>
           </ul>
         </nav>
 
-        <!-- Resources column -->
-        <nav aria-label="Resources navigation">
+        <nav aria-label="Resources footer links">
           <p class="footer__col-title">Resources</p>
           <ul class="footer__links" role="list">
-            <li><a href="#contact" class="footer__link">Documentation</a></li>
-            <li><a href="#contact" class="footer__link">Status Page</a></li>
-            <li><a href="#contact" class="footer__link">SLA Policy</a></li>
-            <li><a href="#contact" class="footer__link">Security</a></li>
-            <li><a href="#contact" class="footer__link">Support Portal</a></li>
+            <li><a class="footer__link" href="#contact">Documentation</a></li>
+            <li><a class="footer__link" href="#contact">Status Page</a></li>
+            <li><a class="footer__link" href="#contact">SLA Policy</a></li>
+            <li><a class="footer__link" href="#contact">Security</a></li>
+            <li><a class="footer__link" href="#contact">Support Portal</a></li>
           </ul>
         </nav>
 
       </div>
 
-      <!-- Bottom bar -->
       <div class="footer__bottom">
-        <p class="footer__copy">
-          &copy; <span id="current-year">2025</span> Prodesk IT. All rights reserved.
-        </p>
-        <nav class="footer__legal" aria-label="Legal navigation">
-          <a href="#contact" class="footer__legal-link">Privacy Policy</a>
-          <a href="#contact" class="footer__legal-link">Terms of Service</a>
-          <a href="#contact" class="footer__legal-link">Cookie Policy</a>
+        <p class="footer__copy">&copy; <span id="year">2025</span> Prodesk IT, Inc. All rights reserved.</p>
+        <nav class="footer__legal" aria-label="Legal links">
+          <a class="footer__legal-link" href="#contact">Privacy Policy</a>
+          <a class="footer__legal-link" href="#contact">Terms of Service</a>
+          <a class="footer__legal-link" href="#contact">Cookie Policy</a>
         </nav>
       </div>
     </div>
   </footer>
 
-  <!-- JS: dark mode toggle, hamburger, scroll animations (Phase 2 + 3) -->
   <script src="js/main.js" defer></script>
-
-  <!-- Dynamic copyright year -->
-  <script>
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-  </script>
-
 </body>
 </html>
